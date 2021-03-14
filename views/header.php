@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?=isset($this->title) ? $this->title : "Annuaires annexes";?></title>
+  <title><?=isset($this->title) ? $this->title : "CMA  - Course Management App";?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="<?=URL;?>/images/logo.png" type="image/png" sizes="20x20">
   <link rel="stylesheet" type="text/css" media="screen" href="<?php echo URL;?>style/css/main.css" />
@@ -35,7 +35,7 @@
           <img src="<?php echo URL;?>images/logo.png" alt="LOGO" height="80" width="110">
         </div>
         <div class="col-lg-9" style="vertical-align: middle;">
-          <h2 style="padding : 17px; font-family: Arial; font-weight: bolder;">Annuaires annexes</h2>
+          <h2 style="padding : 17px; font-family: Arial; font-weight: bolder;">Course Management App</h2>
         </div>
 
       </div>

@@ -32,8 +32,11 @@ class User extends Controller {
         //$data = null;
         $form = new Form();
         try {
-            $form->post('titre')
-                ->post('description');
+            $form->post('names')
+                ->post('birthdate')
+                ->post('email')
+                ->post('password')
+                ->post('usertype');
             $form->submit();
             //echo "the form passed";
             $data = $form->fetch();
@@ -62,8 +65,11 @@ class User extends Controller {
         //$data = null;
         $form = new Form();
         try {
-            $form->post('titre')
-                ->post('description');
+            $form->post('names')
+            ->post('birthdate')
+            ->post('email')
+            ->post('password')
+            ->post('usertype');
             $form->submit();
             //echo "the form passed";
             $data = $form->fetch();

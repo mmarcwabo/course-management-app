@@ -1,27 +1,29 @@
 
-  # Annuaires annexes du sites solidarity world!
+  # Course Management App
 
-  Annuaires annexes du sites solidarity world - affichent les services referencés par pays, region et ville.
-  Les informations sur ces services : tarifs, horaire de travail, localisation et intitulé.
+  CMA - Course Management App.
+  Show courses, teachers, notify students and teachers about course schedules.
 
   * 🌟 Backend :  PHP
   * 🌟 Frontend :  JS, CSS et Bootstrap
-  * 🌟 Base des données : MySQL
+  * 🌟 Database : MySQL
 
-  ## Auteur
+  ## Author
 
   **mmarcwabo**
 
-  ## Fonctionnalités
+  ## Features
 
-  * Ajouter, Modifier, Supprimer les catégories
-  * Ajouter, Modifier, Supprimer les services à referencer
-  * Afficher les services selon leur ville/pays
+  * Add, Edit, Delete, Show courses, teachers and students
+  * Send notifications to students and teachers about course schedules
+  * Show course's history
+  * Filter
 
   ## Configurations
-  * Dans le fichier config.php: Nom de ma base des données, du host, user et mot de passe
-  * Dans le fichier .htaccess : dossier contenant le projet (après RewriteBase)
-  * scripts/js/main.js - appAbsolutePath  = la racine de votre application
+  *  config.php : database setup
+  *  .htaccess : application base
+  * scripts/js/main.js - appAbsolutePath : set up application root folder on your computer or server
 
-  ## Lien pour la démo
-  * https://asw.exsofth.com/
+  ## link to the demo
+  * https://cma.exsofth.com/
+  
