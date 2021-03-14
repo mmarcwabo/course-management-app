@@ -7,7 +7,7 @@
         <div class="card" style="width: 18rem;">
           <img src=<?php echo URL."images/asw_default.jpg"; ?> class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Catégories</h5>
+            <h5 class="card-title">Courses</h5>
             <p class="card-text"><? echo "number of categories"; ?></p>
             <!-- Trigger the categorie modal with a button -->
             <?php Utils::buttonize("Ajouter une catégorie", true, "#categoryModal"); ?>
@@ -17,7 +17,7 @@
         <div class="card" style="width: 18rem;">
           <img src=<?php echo URL."images/asw_default.jpg"; ?> class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Services</h5>
+            <h5 class="card-title">Schedules</h5>
             <p class="card-text"><? echo "number of services"; ?></p>
             <!-- Trigger the service modal with a button -->
             <?php Utils::buttonize("Ajouter un service", true, "#serviceModal"); ?>
@@ -33,7 +33,7 @@
       <form class="form-inline">
         <div class="form-group">
           <br/>
-          <label for="Afficher"><h5>Afficher : <h5/></label>
+          <label for="Afficher"><h5>Afficher : </h5></label>
             <select class="form-control" name="">
               <option value="">Utilisateurs</option>
               <option value="">Services</option>
@@ -47,7 +47,7 @@
     <div class="row ">
       <div class="col-lg-8">
         <?php
-        $source = "Utilisateurs";
+        $source = "Users";
         Utils::showDatatable($source);
          ?>
       </div>
@@ -56,7 +56,7 @@
           <div class="card" style="width: 18rem;">
             <img src=<?php echo URL."images/utilisateurs.jpg"; ?> class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Utilisateurs</h5>
+              <h5 class="card-title">Users</h5>
               <p class="card-text"><? echo "number of categories"; ?></p>
               <!-- Trigger the categorie modal with a button -->
               <?php Utils::buttonize("Gérer les utilisateurs", true, "#usersModal"); ?>
