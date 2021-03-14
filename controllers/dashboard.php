@@ -25,18 +25,16 @@ class Dashboard extends Controller{
         /*require_once "service.php";
         $service = new Service();*/
         //Call a service method here
-        $this->listAttributeOfCategorie("titre");
+        $this->listAttributeOfUser("titre");
         //Render the dashboard view here
         $this->view->render("dashboard/index");
     }
 
-    public function listAttributeOfCategorie($attribute) {
-        require_once 'models/categorie_model.php';
-        $model = new Categorie_Model();
-        $this->view->paysNameList = Model::listItemFromDbTable("pays", "nom");
-        $this->view->paysIdFromVilleList = Model::listItemFromDbTable("ville", "pays_idpays");
-        $this->view->villeNameList = Model::listItemFromDbTable("ville", "nom");
-        $this->view->categorieNameList = $model->showAttributeOfCategorieList($attribute);
+    public function listAttributeOfUser($attribute) {
+        require_once 'models/user_model.php';
+        $model = new User_Model();
+        $this->view->villeNameList = Model::listItemFromDbTable("user", "names");
+        $this->view->userNameList = $model->showAttributeOfUserList($attribute);
     }
 
     function logout(){
