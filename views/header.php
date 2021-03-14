@@ -35,7 +35,7 @@
           <img src="<?php echo URL;?>images/logo.png" alt="LOGO" height="80" width="110">
         </div>
         <div class="col-lg-9" style="vertical-align: middle;">
-          <h2 style="padding : 17px; font-family: Arial; font-weight: bolder;">Course Management App/h2>
+          <h2 style="padding : 17px; font-family: Arial; font-weight: bolder;">Course Management App</h2>
         </div>
 
       </div>
