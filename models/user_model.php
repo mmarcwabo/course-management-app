@@ -62,11 +62,11 @@ class User_Model extends Model {
         $this->db->delete("user", "iduser= '$id'");
     }
 
-    /**
-    * getServicesOf
-    * @param String $category - Category name
-    * @return array() -
-   **/
+   //**
+   // * getServicesOf
+    //* @param String $category - Category name
+   // * @return array() -
+   //**/
   /*
     public function getServicesOf($category){
       return $this->db->select("SELECT * FROM user WHERE titre= :titre", array(":titre" => $category));

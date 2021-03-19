@@ -78,7 +78,7 @@
             <select class="form-control" type="role" name="pays" id="menu-pays" onChange="townListToMenu(this.value);">
               <option value="">Votre Pays</option>
               <!-- List the city's names from database here -->
-              <?php echo Utils::arrayItemToList($this->paysNameList); ?>
+              <?php //echo Utils::arrayItemToList($this->paysNameList); ?>
 
             </select>
           </div>
