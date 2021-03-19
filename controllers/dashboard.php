@@ -25,7 +25,7 @@ class Dashboard extends Controller{
         /*require_once "service.php";
         $service = new Service();*/
         //Call a service method here
-        $this->listAttributeOfUser("titre");
+        $this->listAttributeOfUser("names");
         //Render the dashboard view here
         $this->view->render("dashboard/index");
     }
