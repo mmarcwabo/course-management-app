@@ -105,14 +105,15 @@ public static function showDatatable($source)
 {
   echo "Show datatable here<br/>";
 }
-
+//Updated this code
+//
 public static function getRandowItems($items_table, $number){
-  $items_table = shuffle(shuffle($items_table));
+  $items_table = shuffle($items_table);
   $random_items = array();
   for ($i=0;$ $i < $number; $i++){
     // Get random elements from the shuffled array
     // Countries, towns and other element
-    $random_items[i] = $items_table [i];
+    $random_items[$i] = $items_table [$i];
   }
   return $random_items;
 }
@@ -250,6 +251,12 @@ public static function iconize($image, $size){
   .$image.'" alt="icon" height="'
   .$size.'" width="'.$size.'"/>
   ';
+}
+
+public static function modalize($modalTitle, $formFields, $formAction){
+  //
+  
+  //
 }
 
 }//class Utils end
