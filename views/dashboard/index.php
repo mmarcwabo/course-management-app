@@ -87,7 +87,6 @@
           <div class="modal-header">
             <h5 class="modal-title center">Add a new course</h5>
             <button type="button" class="close" data-dismiss="modal">x</button>
-
           </div>
           <form id="categoryCreationForm" action="<?php echo URL;?>course/create" method="post">
             <div class="modal-body">
