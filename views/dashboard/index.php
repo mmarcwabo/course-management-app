@@ -141,43 +141,37 @@
 
     </div>
 
-    <!-- Categorie Modal end -->
+    <!-- Add Course Modal end -->
 
-    <!-- Modal -->
-    <div id="promotionModal" class="modal fade" role="dialog">
+    <!-- Add Promotion Modal -->
+    <div id="addUserModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title center">Register a promotion</h5>
-            <button type="button" class="close" data-dismiss="modal">X</button>
+            <h5 class="modal-title center">Add a new student</h5>
+            <button type="button" class="close" data-dismiss="modal">x</button>
 
           </div>
-          <form id="serviceCreationForm" action="<?php echo URL;?>service/create" method="post">
+          <form id="serviceCreationForm" action="<?php echo URL;?>user/create" method="post">
             <div class="modal-body">
               <div class="container">
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <label for=""><b>Promotion's details :</b></label>
+                      <label for=""><b>User's information :</b></label>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
                   <div class="form-group">
-                      <select type="role" class="form-control" name="level" id="level">
-                        <!-- List of departements here -->
-                        <option value="">G0</option>
-                        <option value="">G1</option>
-                        <option value="">G2</option>
-                        <option value="">G3</option>
-                        <option value="">T1</option>
-                        <option value="">T2</option>
-                      </select>
+                      <input type="text" name="names" id="names" class="form-group" placeholder="">
                     </div>
-                    <div class="form-group">
+                  </div>
+                  <div class="col-sm-6">
+                  <div class="form-group">
                       <select type="role" class="form-control" name="departement" id="departement">
                         <!-- List of departements here -->
                         <option value="">Génie Civil</option>
@@ -186,71 +180,11 @@
                         <option value="">Génie Electrique</option>
                       </select>
                     </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="telephone" id="telephone" placeholder="Télephone">
-                    </div>
-                    <div class="form-group">
-                      <select type="role" class="form-control" name="categorie" id="categorie">
-                        <!-- List the category names from database here -->
-                        <option value="">Catégorie</option>
-                        <?php echo Utils::arrayToList($this->categorieNameList); ?>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="form-group">
-                      <label for=""><b>Localiser le service :</b></label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <select type="role" class="form-control" name="pays" id="pays" onChange="refreshTownList(this.value);">
-                        <option value="">Pays</option>
-                        <!-- List the city's names from database here -->
-                        <?php echo Utils::arrayItemToList($this->paysNameList); ?>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <select type="role" class="form-control" name="ville" id="ville" onchange="showHideEle(this, 'nouvelleVille', 'Ajouter votre ville')">
-                        <option value="">Ville</option>
-                        <!-- List the city's names from database here -->
-                        <!-- Only if they are located in the selected country -->
-
-                        <option>Ajouter votre ville</i></option>
-                      </select>
-                      <!-- Showed only if the town is new -->
-                      <input type="text" class="form-control" name="nouvelleVille" id="nouvelleVille"
-                      placeholder="Saisissez le nom de votre ville"
-                      style="display:none;"/>
-                    </div>
-                  </div>
-                  <!-- Full form field here -->
-                  <div class="col-sm-12">
-                    <div class="form-group">
-                      <textarea class="form-control" name="adresse" id="adresse" placeholder="Adresse physique"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="horairedisponibilite" id="horairedisponibilite" placeholder="Horaire de disponibilité">
-                    </div>
-                    <div class="form-group">
-                      <textarea name="details" class="form-control" id="details" placeholder="Description du service"></textarea>
-                    </div>
-                  </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <input class="form-control pri-btn-color" type="submit" value="Ajouter le service"
+                      <input class="form-control pri-btn-color" type="submit" value="Save the user"
                       style="background-color: #6dac29;font-weight: bold; border-radius:0px; color: #001;">
                     </div>
                   </div>
@@ -263,7 +197,7 @@
 
     </div>
 
-    <!-- service Modal end -->
+    <!-- Add Promotion Modal end -->
 
     <div id="btn-devs" class="center">
 
