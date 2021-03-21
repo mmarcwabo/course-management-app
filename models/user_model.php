@@ -2,25 +2,30 @@
 
 //user_model
 
-class User_Model extends Model {
+class User_Model extends Model
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
-    public function create($data) {
+    public function create($data)
+    {
         //Inserting data from form in the database
-        $this->db->insert('user', ['names' => $data['names'],
+        $this->db->insert('user', [
+            'names' => $data['names'],
             'birthdate' => $data['birthdate'],
             'email' => $data['email'],
-            'password' => $data['password'],            
+            'password' => $data['password'],
             'usertype' => $data['usertype']
-            ]);
+        ]);
         //Redirect to the view that sent the request to avoid data duplication on error
-        header('location:'.URL.'user');
+        header('location:' . URL . 'user');
     }
 
-    public function showUserList() {
+    public function showUserList()
+    {
         return $this->db->select("SELECT * FROM user");
     }
 
@@ -28,11 +33,13 @@ class User_Model extends Model {
      * showAttributeOfUserList - Get lists for comboboxes and select html tags
      * @param string $attribute the table field we want to list
      */
-    public function showAttributeOfUserList($attribute) {
-        return $this->db->select("SELECT ".$attribute." FROM user");
+    public function showAttributeOfUserList($attribute)
+    {
+        return $this->db->select("SELECT " . $attribute . " FROM user");
     }
 
-    public function showSingleList($id) {
+    public function showSingleList($id)
+    {
         return $this->db->select("SELECT * FROM user WHERE iduser= :id", array(":id" => $id));
     }
 
@@ -40,13 +47,19 @@ class User_Model extends Model {
      * editUser - Saves the data edition to the database
      * @param array $data values to save to database
      */
-    public function editUser($data) {
-        $this->db->update("user", ['names' => $data['names'],
-        'birthdate' => $data['birthdate'],
-        'email' => $data['email'],
-        'password' => $data['password'],            
-        'usertype' => $data['usertype']]
-            , "`iduser` = {$data['iduser']}");
+    public function editUser($data)
+    {
+        $this->db->update(
+            "user",
+            [
+                'names' => $data['names'],
+                'birthdate' => $data['birthdate'],
+                'email' => $data['email'],
+                'password' => $data['password'],
+                'usertype' => $data['usertype']
+            ],
+            "`iduser` = {$data['iduser']}"
+        );
     }
 
     /**
@@ -54,7 +67,8 @@ class User_Model extends Model {
      * @param Integer $id
      * @return boolean
      */
-    public function deleteUser($id) {
+    public function deleteUser($id)
+    {
         $result = $this->db->select("SELECT * FROM user WHERE iduser= :id", array(":id" => $id));
         if ($result[0]['usertype'] == 'Admin') {
             return false;
@@ -62,14 +76,14 @@ class User_Model extends Model {
         $this->db->delete("user", "iduser= '$id'");
     }
 
-   //**
-   // * getServicesOf
-    //* @param String $category - Category name
-   // * @return array() -
-   //**/
-  /*
-    public function getServicesOf($category){
-      return $this->db->select("SELECT * FROM user WHERE titre= :titre", array(":titre" => $category));
+    /**
+     * find a user for login purposes
+     * @param String $email - User email (username)
+     * @return array() -
+     **/
+
+    public function findUserInfoByEmail($email)
+    {
+        return $this->db->select("SELECT * FROM user WHERE email= :email", array(":email" => $email));
     }
- */
 }
