@@ -6,6 +6,10 @@
 #email : mwabo@exsofth.com
 
 class User extends Controller {
+    
+    //
+    private $email;
+    private $password;
 
     function __construct() {
         parent::__construct();
@@ -121,4 +125,73 @@ class User extends Controller {
       $this->view->render("user/index");
     }
     */
+    public function login(){
+        
+        require 'libs/Form.php';
+        require 'libs/Val.php';
+        //Getting data from form
+        //$data = null;
+        $form = new Form();
+        try {
+            $form->post('email')
+                ->post('password');
+            $form->submit();
+            //echo "the form passed";
+            //Posted data are in the $data mixed array
+            $data = $form->fetch();
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+        //Login process here
+        $user_ = $this->model->findUserInfoByEmail($data['email']);
+        //if the email if found in our db
+        if(isset($user_[0]) && $user_[0]['email']==$data['email']){
+            //The user exists
+            echo "<br/>";
+            echo "Email exists\t";
+            echo "<br/>";
+            //Let's go for password checking
+            $password_ = $user_[0]['password'];
+            $password__ = Hash::create("tiger128,3", $data['password'], HASH_PASSWORD_KEY);
+            if($password__==$password_){
+                echo "Password is correct - Welcome <br/>";
+                Session::init();
+                Session::set("connectedUser", $user_[0]['names']);
+                Session::set("sessionId",  $user_[0]['email']);
+                Session::set("userType",  $user_[0]['usertype']);
+                header('location: ' . URL . 'dashboard');
+            }else{
+                echo "The password is not correct, go away and leave me alone man <br/>";
+                header('location: ' . URL . 'user');
+            }
+           exit;
+        }else{
+            echo "This email is not registered as a valid user";
+            header('location: ' . URL . 'user');
+            exit;
+        }
+        
+        //Find the user from our database by email
+        $user__ = $this->model->findUserInfoByEmail($username);
+        print_r($user__);
+        //With get field from any else, find the password
+        //with passwordMatch, find if the users has inputed the real password
+        //Occasion to test the match function of php 8.
+    
+
+
+    }
+    /**
+     * Getter and Setter
+     */
+    public function getEmail(){
+        return $this->email;
+    }
+
+    /**
+     * Getter and Setter
+     */
+    public function getPassword(){
+        return $this->password;
+    }
 }
