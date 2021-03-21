@@ -133,6 +133,23 @@ public static function buttonize($label, $isForModal, $targetID){
         '.$label.'
         </button>';
 }
+
+/*
+ *Main button style
+ *
+ */
+public static function linkize($linkText, $isForModal, $targetID){
+  $modal_setting = "";
+  if($isForModal){
+    $modal_setting = 'data-toggle="modal" data-target="'.$targetID;
+  }
+  echo  '<a href="#" class=""'.
+        $modal_setting.
+        '" style="">
+        '.$linkText.'
+        </a>';
+}
+
 /**
 * overlyzeList is specific to display categories
 * @param $array_list - Array of categories to Displays

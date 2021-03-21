@@ -36,6 +36,9 @@ class Dashboard extends Controller{
         $this->view->villeNameList = Model::listItemFromDbTable("user", "names");
         $this->view->userNameList = $model->showAttributeOfUserList($attribute);
     }
+    public function loadFeatureForUser($userType){
+        
+    }
 
     function logout(){
         Session::destroy();
