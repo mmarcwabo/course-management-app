@@ -155,8 +155,10 @@ class User extends Controller {
             $password__ = Hash::create("tiger128,3", $data['password'], HASH_PASSWORD_KEY);
             if($password__==$password_){
                 echo "Password is correct - Welcome <br/>";
+                Session::destroy();
                 Session::init();
                 Session::set("connectedUser", $user_[0]['names']);
+                //Session::set("visitor", (explode('@',$user_[0]['names']))[0]);
                 Session::set("sessionId",  $user_[0]['email']);
                 Session::set("userType",  $user_[0]['usertype']);
                 header('location: ' . URL . 'dashboard');

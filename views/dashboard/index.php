@@ -5,7 +5,7 @@
     <div class="col-lg-12">
       <div class="card-deck">
         <div class="card" style="width: 18rem;">
-          <img src=<?php echo URL."images/asw_default.jpg"; ?> class="card-img-top" alt="...">
+          <img src=<?php echo URL."images/cma_default.jpg"; ?> class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Courses</h5>
             <p class="card-text"><? echo "number of categories"; ?></p>
@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src=<?php echo URL."images/asw_default.jpg"; ?> class="card-img-top" alt="...">
+          <img src=<?php echo URL."images/cma_default.jpg"; ?> class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Schedules</h5>
             <p class="card-text"><? echo "number of services"; ?></p>
