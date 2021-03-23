@@ -1,2 +1,2 @@
 //Globals
-var appAbsolutePath  = "http://localhost/quatres-annuaires-annexes/";
+var appAbsolutePath  = "http://localhost/courses_mans/";

@@ -120,7 +120,7 @@
                     <input class="form-control pri-btn-color" type="submit" value="Create your account" style="background-color: #6dac29;font-weight: bold; border-radius:4px; color: #001;">
                   </div>
                   <div class="form-group">
-                    <label for="loginOrSignin"><?php Utils::linkize("Connect with an existing account", true, "#loginModal"); ?></label>
+                    <label for="loginOrSignin"><?php Utils::linkize("Connect with an existing account", false, "user/"); ?></label>
                   </div>
                 </div>
               </div>
@@ -134,53 +134,3 @@
 </div>
 
 <!-- Add Course Modal end -->
-
-
-<!-- Login modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title center">Register to CMA</h5>
-        <button type="button" class="close" data-dismiss="modal">x</button>
-      </div>
-      <form id="userLoginForm" action="<?php echo URL; ?>user/login" method="post">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form-group">
-              <label for=""><b></b></label>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form-group">
-              <label for="email"><b>Email</b></label>
-              <input type="text" class="form-control" name="email" id="email">
-            </div>
-            <div class="form-group">
-              <label for="password"><b>Password</b></label>
-              <input type="password" class="form-control" name="password" id="password">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form-group">
-              <input class="form-control pri-btn-color" type="submit" value="Login" style="background-color: #6dac29;font-weight: bold;
-               border-radius:4px; color: #001;">
-            </div>
-            <div class="form-group">
-              <label for="loginOrSignin">New to CMA ? <?php Utils::linkize("Register here", true, "#userModal"); ?></label>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
-</div>
-
-<!-- Login Modal end -->
