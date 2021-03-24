@@ -112,12 +112,13 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                    onclick="EnableSubmit(this)">
                     <label class="form-check-label" for="flexSwitchCheckDefault"> Accept the Terms and Conditions of use.</label>
                   </div>
                   <div class="form-group">
                     <label for=""></label>
-                    <input class="form-control pri-btn-color" type="submit" value="Create your account" style="background-color: #6dac29;font-weight: bold; border-radius:4px; color: #001;">
+                    <input class="form-control pri-btn-color" id="Accept" type="submit" value="Create your account" style="background-color: #6dac29;font-weight: bold; border-radius:4px; color: #001;">
                   </div>
                   <div class="form-group">
                     <label for="loginOrSignin"><?php Utils::linkize("Connect with an existing account", false, "user/"); ?></label>
