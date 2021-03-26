@@ -66,7 +66,7 @@
         <h5 class="modal-title center">Register to CMA</h5>
         <button type="button" class="close" data-dismiss="modal">x</button>
       </div>
-      <form id="categoryCreationForm" action="<?php echo URL; ?>course/create" method="post">
+      <form id="categoryCreationForm" action="<?php echo URL; ?>user/create" method="post">
         <div class="modal-body">
           <div class="container">
             <div class="row">
@@ -88,32 +88,28 @@
                   <input type="email" name="email" id="email" class="form-control" placeholder="email">
                 </div>
                 <div class="form-group">
-                  <label for="password">Set your password (8 characters min. Include numbers and Symbols)</label>
+                  <label for="password">
+                    <h6>Set your password (8 characters min. Include numbers and Symbols)</h6>
+                  </label>
                 </div>
                 <div class="form-group">
-                  <select type="role" class="form-control" name="usertype" id="usertype">
-                    <!-- List the category names from database here -->
-                    <option value="">Teacher</option>
-                    <?php echo Utils::arrayToList($this->teacherNameList); #add teacher list here 
-                    ?>
+                  <label for="userype">
+                    <h6>Register as a : </h6>
+                  </label>
+                  <select name="usertype" id="usertype" class="form-control" type="role">
+                    <option value="N">Select an option</option>
+                    <option value="S">Student</option>
+                    <option value="T">Teacher</option>
                   </select>
                 </div>
-                <div class="form-group">
-                  <select type="role" class="form-control" name="promotion" id="promotion">
-                    <!-- List the category names from database here -->
-                    <option value="">Promotion</option>
-                    <?php echo Utils::arrayToList($this->promotionNameList); #add teacher list here 
-                    ?>
-                  </select>
-                </div>
+
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                    onclick="EnableSubmit(this)">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="EnableSubmit(this)">
                     <label class="form-check-label" for="flexSwitchCheckDefault"> Accept the Terms and Conditions of use.</label>
                   </div>
                   <div class="form-group">

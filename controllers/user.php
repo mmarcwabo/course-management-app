@@ -19,7 +19,7 @@ class User extends Controller {
     }
 
     function index() {
-        $this->view->title = "User";
+        $this->view->title = "User login / register page";
         $this->view->js = array(
             "scripts/js/main.js",
             "scripts/js/user.js"
@@ -161,6 +161,8 @@ class User extends Controller {
                 //Session::set("visitor", (explode('@',$user_[0]['names']))[0]);
                 Session::set("sessionId",  $user_[0]['email']);
                 Session::set("userType",  $user_[0]['usertype']);
+                //Send a success message on the dashboard
+                Session::set("alertMessage", "Login Successfull");
                 header('location: ' . URL . 'dashboard');
             }else{
                 echo "The password is not correct, go away and leave me alone man <br/>";
