@@ -17,7 +17,7 @@ class User_Model extends Model
             'names' => $data['names'],
             'birthdate' => $data['birthdate'],
             'email' => $data['email'],
-            'password' => $data['password'],
+            'password' => Hash::create("tiger128,3", $data['password'], HASH_PASSWORD_KEY),
             'usertype' => $data['usertype']
         ]);
         //Redirect to the view that sent the request to avoid data duplication on error
