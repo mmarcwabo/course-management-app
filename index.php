@@ -3,11 +3,14 @@
 //Loading configurations files
 require "config.php";
 
-//autoloader
+// custom autoloader
 spl_autoload_register(function($class){
 
     require LIBS . $class . ".php";
 });
+
+//Autoloader from composer
+require __DIR__.'/vendor/autoload.php';
 
 $app = new Bootstrap();
 //Options
