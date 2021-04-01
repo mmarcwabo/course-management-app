@@ -77,7 +77,8 @@ Session::set("visitedAt", date('H:m:s') . " on " . date('d-m-Y'));
         </div>
       </div>
       <!--Tabs  end-->
-      <!--Menu per country start here-->
+      <!--
+      Menu per country start here
       <div class="row">
         <div class="float-right">
           <form class="form-inline float-right" action="#" method="post">
@@ -85,7 +86,7 @@ Session::set("visitedAt", date('H:m:s') . " on " . date('d-m-Y'));
               <label for="ville" class="mx-2" for="menu-pays" style="color:#fff;">Pour commencer sélectionnez</label>
               <select class="form-control" type="role" name="pays" id="menu-pays" onChange="townListToMenu(this.value);">
                 <option value="">Votre Pays</option>
-                <!-- List the city's names from database here -->
+                <!-List the city's names from database here ->
                 <?php //echo Utils::arrayItemToList($this->paysNameList); 
                 ?>
 
@@ -96,8 +97,8 @@ Session::set("visitedAt", date('H:m:s') . " on " . date('d-m-Y'));
               <label for="ville" class="label-white"></label>
               <select class="form-control" type="role" name="ville" id="menu-ville">
                 <option value="">Votre Ville</option>
-                <!-- List the city's names from database here -->
-                <!-- Only if they are located in the selected country -->
+                <!- List the city's names from database here ->
+                <!- Only if they are located in the selected country ->
               </select>
 
             </div>
@@ -107,7 +108,8 @@ Session::set("visitedAt", date('H:m:s') . " on " . date('d-m-Y'));
           </form>
         </div>
       </div>
-      <!--Menu per country end here-->
+      <!-Menu per country end here->
+      -->
       <?php Utils::addBreadCumb(); ?>
     </div>
   </div>
